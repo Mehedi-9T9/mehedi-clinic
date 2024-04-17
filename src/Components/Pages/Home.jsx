@@ -33,7 +33,7 @@ const Home = () => {
 
             <div>
                 <h2 className="text-4xl text-center my-10 text-red-700 font-roboto font-bold">Our Speacial Doctors</h2>
-                <div className="grid grid-cols-3 gap-6">
+                <div className="md:grid grid-cols-3 gap-6">
                     {
                         sliceDoctors.map((doctor, idx) => <DoctorsCart key={idx} doctor={doctor}></DoctorsCart>)
                     }

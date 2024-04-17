@@ -1,5 +1,5 @@
 // import { object } from 'prop-types';
-import PropTypes from 'props-types'
+import PropTypes from 'prop-types'
 // import { Children } from 'react';
 const Services = ({ service }) => {
     const { img, title, description } = service
@@ -16,7 +16,7 @@ const Services = ({ service }) => {
     );
 };
 Services.propTypes = {
-    service: Services.object.isRequired
+    service: PropTypes.object.isRequired
 }
 
 export default Services;
