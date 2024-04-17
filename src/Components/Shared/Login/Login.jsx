@@ -51,7 +51,7 @@ const Login = () => {
                 <title>Mehedi Clinic | login</title>
             </Helmet>
 
-            <div className="hero min-h-screen bg-base-200 rounded-xl " style={{ backgroundImage: "url('../../../../public/img/Moon.svg')" }}>
+            <div className="hero md:min-h-screen bg-base-200 rounded-xl " style={{ backgroundImage: "url('../../../../public/img/Moon.svg')" }}>
                 <div className="hero-content flex-col lg:flex-row-reverse">
 
                     <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
