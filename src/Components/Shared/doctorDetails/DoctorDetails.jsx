@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { AuthContext } from '../authProvider/AuthProvider';
 
@@ -9,11 +9,11 @@ const DoctorDetails = () => {
     const { id, name, img, collage, degree, disease, description, time, day } = findItem;
     console.log(id, name);
     return (
-        <div className=" flex gap-x-6 bg-base-200 container mx-auto m-10 p-10">
+        <div className=" md:flex gap-x-6 bg-base-200 container mx-auto  p-10">
             <div className="">
                 <img src={img} className="max-w-sm rounded-lg shadow-2xl border" />
             </div>
-            <div>
+            <div className='md:mt-0 mt-10'>
                 <h1 className="text-5xl font-roboto font-bold">{name}</h1>
                 <p className="font-poppins"><span className='text-2xl font-bold'>{degree}</span> {collage}</p>
                 <div className='border-t-2 border-white py-4'>
@@ -40,9 +40,9 @@ const DoctorDetails = () => {
                         <p className='text-sm font-poppins'>30 Days</p>
                     </div>
                 </div>
-                <div className='py-6 '>
+                <div className='py-6 text-center md:text-start  '>
                     <h3 className='btn bg-red-500 text-black text-lg font-poppins border border-black '>New Parson : <span className='text-white'> 500 TK</span></h3>
-                    <h3 className='btn bg-red-500 text-black text-lg font-poppins border border-black md:ml-10'>Old Parson : <span className='text-white'> 250 TK</span></h3>
+                    <h3 className=' mt-5 btn bg-red-500 text-black text-lg font-poppins border border-black md:ml-10'>Old Parson : <span className='text-white'> 250 TK</span></h3>
                 </div>
 
 

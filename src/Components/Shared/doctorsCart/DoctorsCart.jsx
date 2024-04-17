@@ -1,9 +1,8 @@
-import React from 'react';
+import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom';
 
 const DoctorsCart = ({ doctor }) => {
     const { id, img, name, disease, degree } = doctor;
-    // console.log(disease);
 
 
     return (
@@ -33,5 +32,9 @@ const DoctorsCart = ({ doctor }) => {
         </div>
     );
 };
+
+DoctorsCart.propTypes = {
+    doctor: PropTypes.object.isRequired
+}
 
 export default DoctorsCart;

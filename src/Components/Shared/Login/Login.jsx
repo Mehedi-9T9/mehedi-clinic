@@ -1,8 +1,10 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../authProvider/AuthProvider';
 import { FcGoogle } from "react-icons/fc";
 import { Helmet } from 'react-helmet-async';
+import { FaEye, FaEyeSlash } from "react-icons/fa";
+
 
 const Login = () => {
     const navigate = useNavigate()
@@ -40,6 +42,8 @@ const Login = () => {
                 console.log(error.message);
             })
     }
+    const [show, setShow] = useState(false)
+
 
     return (
         <div className='container mx-auto m-10 '>
@@ -59,10 +63,12 @@ const Login = () => {
                                 <input name='email' type="email" placeholder="email" className="input input-bordered" required />
                             </div>
                             <div className="form-control">
-                                <label className="label">
+                                <label className="label relative">
                                     <span className="label-text">Password</span>
+                                    <button onClick={() => setShow(!show)} className="absolute left-[81%] top-[50px] right-4 text-2xl"> {show ? <FaEye /> : <FaEyeSlash />} </button>
+
                                 </label>
-                                <input name='password' type="password" placeholder="password" className="input input-bordered" required />
+                                <input name='password' type={show ? "text" : "password"} placeholder="password" className="input input-bordered" required />
                                 <label className="label">
                                     <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                                 </label>

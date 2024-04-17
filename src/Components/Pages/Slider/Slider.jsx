@@ -2,6 +2,12 @@
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 
+// import Aos from 'aos';
+// import 'aos/dist/aos.css'
+
+
+import 'animate.css';
+
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -11,6 +17,7 @@ import './slider.css';
 
 // import required modules
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+import { useEffect } from 'react';
 
 
 const Slider = () => {
@@ -32,6 +39,7 @@ const Slider = () => {
                 className="mySwiper h-[600px] m-5 rounded-xl border bg-[#eee]"
             >
                 <SwiperSlide>
+
                     <div className=' md:flex w-full justify-around md:m-0 m-5 '>
                         <div className='md:p-[100px]  md:text-black-700 md:space-y-3'>
                             <h2 className="text-3xl md:text-5xl font-roboto font-bold text-red-700 md:text-black">Our Skin Tips Doctor</h2>
@@ -46,6 +54,7 @@ const Slider = () => {
                             <img src="https://i.ibb.co/RNN1kt7/slider3-image.png" alt="" className='' />
                         </div>
                     </div>
+
                 </SwiperSlide>
 
                 <SwiperSlide>

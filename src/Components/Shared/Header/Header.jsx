@@ -3,7 +3,7 @@ import { FaAmbulance } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import moment from 'moment';
 const Header = () => {
-    const photo = '../../../../public/img/mhmeded1i.png'
+    const photo = '../../../../public/img/title.svg'
     const currentTime = moment().format('LT');
     return (
         <div className=" bg-red-700 md:flex md:px-[100px] md:py-6 md:gap-x-[300px] justify-between items-center p-5 ">
