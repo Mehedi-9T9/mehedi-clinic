@@ -1,0 +1,17 @@
+[
+    {
+        "title": "Emergency Services",
+        "description": "Our hospital offers 24/7 emergency services to provide immediate medical care for urgent situations. Our highly trained staff and state-of-the-art facilities ensure that patients receive prompt and expert care when they need it most.",
+        "img": "https://i.ibb.co/W0HGH65/istockphoto-1491291817-612x612.jpg"
+    },
+    {
+        "title": "Surgical Services",
+        "description": "We specialize in a wide range of surgical procedures, from routine surgeries to complex interventions. Our team of skilled surgeons, nurses, and support staff work together to ensure the best possible outcomes for our patients.",
+        "img": "https://i.ibb.co/pJGSwkz/istockphoto-1425802212-612x612.jpg"
+    },
+    {
+        "title": "Maternity Care",
+        "description": "Our maternity care services are designed to support expectant mothers throughout their pregnancy, childbirth, and postpartum journey. From prenatal care to labor and delivery, our compassionate team provides personalized care to ensure the health and well-being of both mother and baby.",
+        "img": "https://i.ibb.co/vXvhTVj/istockphoto-1214634676-612x612.jpg"
+    }
+]

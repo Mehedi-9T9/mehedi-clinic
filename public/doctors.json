@@ -3,17 +3,33 @@
         "id": 1,
         "img": "https://i.ibb.co/RNN1kt7/slider3-image.png",
         "name": "Dr. John Smith",
-        "degree": "MD",
+        "degree": "MBBS",
         "description": "Dr. John Smith is a highly experienced physician specializing in internal medicine. He has over 15 years of experience in diagnosing and treating a wide range of medical conditions.",
-        "visitPrice": 100
+        "visitPrice": 100,
+        "disease": [
+            "Influenza",
+            "Diabetes mellitus",
+            "Tuberculosis"
+        ],
+        "collage": "Rajshahi Medical Collage",
+        "day": "Per Sunday",
+        "time": "9:00 AM To 4:00 PM"
     },
     {
         "id": 2,
         "img": "https://i.ibb.co/hB9xjVC/slider2-image.png",
         "name": "Dr. Emily Johnson",
-        "degree": "DO",
+        "degree": "MBBS",
         "description": "Dr. Emily Johnson is a dedicated family doctor with a passion for preventive care. She believes in building long-term relationships with her patients to provide comprehensive healthcare.",
-        "visitPrice": 90
+        "visitPrice": 90,
+        "disease": [
+            "Influenza",
+            "Diabetes mellitus",
+            "Tuberculosis"
+        ],
+        "collage": "Dhaka Medical Collage",
+        "day": "Per Monday",
+        "time": "9:00 AM To 4:00 PM"
     },
     {
         "id": 3,
@@ -21,22 +37,62 @@
         "name": "Dr. Michael Brown",
         "degree": "PhD",
         "description": "Dr. Michael Brown is a clinical psychologist specializing in cognitive behavioral therapy. He has helped numerous patients overcome anxiety, depression, and other mental health issues.",
-        "visitPrice": 120
+        "visitPrice": 120,
+        "disease": [
+            "Influenza",
+            "Diabetes mellitus",
+            "Tuberculosis"
+        ],
+        "collage": "Chittagong Medical Collage",
+        "day": "Per Tuesday",
+        "time": "9:00 AM To 4:00 PM"
     },
     {
         "id": 4,
         "img": "https://i.ibb.co/Dwfz9Cc/blog-new-1.jpg",
         "name": "Dr. Sarah Patel",
-        "degree": "DDS",
+        "degree": "MBBS",
         "description": "Dr. Sarah Patel is a skilled dentist with expertise in cosmetic and restorative dentistry. She is committed to providing her patients with personalized care and beautiful smiles.",
-        "visitPrice": 80
+        "visitPrice": 80,
+        "disease": [
+            "Influenza",
+            "Diabetes mellitus",
+            "Tuberculosis"
+        ],
+        "collage": "Barisal Medical Collage",
+        "day": "Per Wednesday",
+        "time": "9:00 AM To 4:00 PM"
     },
     {
         "id": 5,
         "img": "https://i.ibb.co/s1D1cks/blog-new-13.jpg",
         "name": "Dr. David Lee",
-        "degree": "DVM",
+        "degree": "MBBS",
         "description": "Dr. David Lee is a compassionate veterinarian who specializes in small animal medicine. He is dedicated to promoting the health and well-being of pets through preventive care and treatment.",
-        "visitPrice": 70
+        "visitPrice": 70,
+        "disease": [
+            "Influenza",
+            "Diabetes mellitus",
+            "Tuberculosis"
+        ],
+        "collage": "Rongpur Medical Collage",
+        "day": "Per Saturday",
+        "time": "9:00 AM To 4:00 PM"
+    },
+    {
+        "id": 6,
+        "img": "https://i.ibb.co/RNN1kt7/slider3-image.png",
+        "name": "Dr. John Smith",
+        "degree": "MBBS",
+        "description": "Dr. John Smith is a highly experienced physician specializing in internal medicine. He has over 15 years of experience in diagnosing and treating a wide range of medical conditions.",
+        "visitPrice": 100,
+        "disease": [
+            "Influenza",
+            "Diabetes mellitus",
+            "Tuberculosis"
+        ],
+        "collage": "Comilla Medical Collage",
+        "day": "Per Thursday",
+        "time": "9:00 AM To 4:00 PM"
     }
 ]

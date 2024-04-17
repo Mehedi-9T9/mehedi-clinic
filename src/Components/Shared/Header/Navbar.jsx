@@ -1,11 +1,27 @@
-import { NavLink } from "react-router-dom";
+import { useContext } from "react";
+import { NavLink, Link } from "react-router-dom";
+import { AuthContext } from "../authProvider/AuthProvider";
+import './Navbar.css'
 
 const Navbar = () => {
+    const { user, logOutUser } = useContext(AuthContext)
+    console.log(user?.photoURL);
+
+    const logOutHandle = () => {
+        logOutUser()
+            .then(() => {
+                alert("log Out Successfull")
+            })
+            .catch(error => {
+                console.log(error.message);
+            })
+    }
     const links = <>
         <NavLink to='/'>Home</NavLink>
-        <NavLink to='/about'>Aboute</NavLink>
         <NavLink to='/doctors'>Doctors</NavLink>
         <NavLink to='/blogs'>Blogs</NavLink>
+        <NavLink to='/login'>Login</NavLink>
+
     </>
     return (
         <div>
@@ -27,7 +43,38 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <a className="btn">Button</a>
+
+                    {
+                        user ?
+                            <div className="avatar online mr-5 ">
+                                <div className="w-[50px] rounded-full">
+
+                                    <div className="relative">
+                                        <img src={user?.photoURL ? user?.photoURL : "https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"} />
+                                        <div className="absolute">
+                                            <p>Mehedi</p>
+                                        </div>
+
+
+                                    </div>
+
+
+
+
+
+
+                                    {/* <img src={user?.photoURL ? user?.photoURL : "https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"} /> */}
+                                </div>
+                            </div> : null
+                    }
+
+
+
+                    {
+                        user ? <a className="btn" onClick={logOutHandle}>Log Out</a> : <Link to="/login"><a className="btn">Login</a></Link>
+                    }
+
+
                 </div>
             </div>
         </div>

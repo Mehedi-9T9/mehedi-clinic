@@ -16,7 +16,7 @@ import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 const Slider = () => {
 
     return (
-        <div className='container mx-auto'>
+        <div className='container mx-auto '>
             <Swiper
                 spaceBetween={30}
                 centeredSlides={true}
@@ -29,10 +29,10 @@ const Slider = () => {
                 }}
                 navigation={true}
                 modules={[Autoplay, Pagination, Navigation]}
-                className="mySwiper"
+                className="mySwiper h-[600px] m-5 rounded-xl border bg-[#eee]"
             >
                 <SwiperSlide>
-                    <div className=' flex w-full justify-around'>
+                    <div className=' flex w-full justify-around '>
                         <div className='p-[100px] text-black-700 space-y-3'>
                             <h2 className="text-5xl font-roboto font-bold">Our Skin Tips Doctor</h2>
                             <h2 className='text-3xl font-poppins font-bold'>Sumaiya Pervin</h2>
