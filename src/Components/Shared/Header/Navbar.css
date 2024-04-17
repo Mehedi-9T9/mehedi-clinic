@@ -2,3 +2,13 @@
     color: green;
     font-weight: bold;
 }
+
+.custom-name {
+    display: none;
+
+}
+
+.user-photo :hover .custom-name {
+    display: block;
+
+}
