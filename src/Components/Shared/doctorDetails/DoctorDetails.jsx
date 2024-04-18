@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { AuthContext } from '../authProvider/AuthProvider';
 
 const DoctorDetails = () => {
@@ -7,7 +7,7 @@ const DoctorDetails = () => {
     const { doctors } = useContext(AuthContext)
     const findItem = doctors.find(doctor => doctor.id == doctorId)
     const { id, name, img, collage, degree, disease, description, time, day } = findItem;
-    console.log(id, name);
+
     return (
         <div className=" md:flex gap-x-6 bg-base-200 container mx-auto  p-10">
             <div className="">
@@ -44,9 +44,6 @@ const DoctorDetails = () => {
                     <h3 className='btn bg-red-500 text-black text-lg font-poppins border border-black '>New Parson : <span className='text-white'> 500 TK</span></h3>
                     <h3 className=' mt-5 btn bg-red-500 text-black text-lg font-poppins border border-black md:ml-10'>Old Parson : <span className='text-white'> 250 TK</span></h3>
                 </div>
-
-
-
 
             </div>
         </div >

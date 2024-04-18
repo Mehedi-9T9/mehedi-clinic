@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+
 const BlogsDetails = ({ blog }) => {
     const { img, title, description } = blog
     return (

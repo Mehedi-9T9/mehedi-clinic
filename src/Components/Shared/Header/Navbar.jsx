@@ -23,7 +23,6 @@ const Navbar = () => {
         <NavLink to='/login'>Login</NavLink>
     </>
 
-    console.log(user);
     return (
 
         <div className="navbar bg-base-300 md:px-[100px]">
@@ -58,13 +57,6 @@ const Navbar = () => {
 
 
                                 </div>
-
-
-
-
-
-
-                                {/* <img src={user?.photoURL ? user?.photoURL : "https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"} /> */}
                             </div>
                         </div> : null
                 }

@@ -2,7 +2,7 @@ import { FiPhoneCall } from "react-icons/fi";
 import { FaAmbulance } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import moment from 'moment';
-const Header = () => {
+const Footer = () => {
     const photo = '../../../../public/img/title.svg'
     const currentTime = moment().format('LT');
     return (
@@ -35,4 +35,4 @@ const Header = () => {
     );
 };
 
-export default Header;
+export default Footer;

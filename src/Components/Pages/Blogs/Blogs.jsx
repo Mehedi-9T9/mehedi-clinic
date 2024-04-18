@@ -5,7 +5,6 @@ import BlogsDetails from "../BlogDetail/BlogsDetails";
 const Blogs = () => {
     const blogs = useLoaderData()
     console.log(blogs);
-    // const animet = '../../../../public/img/Animated Shape.svg'
 
     return (
         <div className="container mx-auto md:my-10 ">
@@ -17,10 +16,6 @@ const Blogs = () => {
                     blogs.map((blog, idx) => <BlogsDetails key={idx} blog={blog}></BlogsDetails>)
                 }
             </div>
-
-
-
-
         </div>
     );
 };

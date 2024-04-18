@@ -9,7 +9,6 @@ import 'react-toastify/dist/ReactToastify.css';
 const Rejister = () => {
     const navigate = useNavigate()
     const { rejisterUser } = useContext(AuthContext)
-    // console.log(rejisterUser);
     const submitHandler = (e) => {
         e.preventDefault()
 
@@ -17,9 +16,7 @@ const Rejister = () => {
         const name = form.get('name')
         const email = form.get('email')
         const password = form.get('password')
-        console.log(name);
 
-        // const pattan = /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*\W)(?!.* ).{8,16}$/
         const pattan = /^(?=.*[A-Z])(?=.*[a-z]).{6,}$/
         const chek = pattan.test(password);
         console.log(chek);
@@ -34,7 +31,7 @@ const Rejister = () => {
         // user Create
         rejisterUser(email, password)
             .then((resut) => {
-                console.log(resut.user);
+                const user = resut.user;
                 navigate('/')
                 e.target.reset();
             })
@@ -43,7 +40,6 @@ const Rejister = () => {
             })
     }
     const [show, setShow] = useState(false)
-    console.log(show);
     return (
         <div>
 

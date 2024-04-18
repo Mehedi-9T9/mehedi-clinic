@@ -10,8 +10,7 @@ const Login = () => {
     const navigate = useNavigate()
     const { loginUser, googleLogin } = useContext(AuthContext)
     const location = useLocation()
-    // console.log('login location', location);
-    // const [inputValue, setInputValue] = useState(' ')
+
     const submitHandler = (e) => {
         e.preventDefault()
 
@@ -35,7 +34,7 @@ const Login = () => {
     const googleHandler = () => {
         googleLogin()
             .then(result => {
-                console.log(result.user);
+                const user = result.user
                 navigate('/')
             })
             .catch(error => {

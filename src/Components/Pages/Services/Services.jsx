@@ -1,6 +1,5 @@
-// import { object } from 'prop-types';
 import PropTypes from 'prop-types'
-// import { Children } from 'react';
+
 const Services = ({ service }) => {
     const { img, title, description } = service
     return (
