@@ -46,8 +46,8 @@ const Navbar = () => {
 
                 {
                     user ?
-                        <div className="avatar online mr-3 md:mr-5 user-photo ">
-                            <div className="w-[50px] rounded-full">
+                        <div className="avatar online mr-3 md:mr-5 user-photo  ">
+                            <div className="w-[50px] rounded-full border-2 border-red-700 text-center">
 
                                 <div className="">
                                     <img src={user?.photoURL ? user?.photoURL : "https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"} />

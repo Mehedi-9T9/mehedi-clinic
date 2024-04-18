@@ -5,8 +5,11 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { getAuth, updateProfile } from "firebase/auth";
+import app from "../../../firebase/firebase.config";
 
 const Rejister = () => {
+    const auth = getAuth(app)
     const navigate = useNavigate()
     const { rejisterUser } = useContext(AuthContext)
     const submitHandler = (e) => {
@@ -32,8 +35,25 @@ const Rejister = () => {
         rejisterUser(email, password)
             .then((resut) => {
                 const user = resut.user;
-                navigate('/')
+
+
                 e.target.reset();
+                updateProfile(resut.user, {
+                    displayName: name, photoURL: "https://i.ibb.co/RNN1kt7/slider3-image.png"
+                })
+                    .then(() => {
+                        alert('update successfull');
+                        // Profile updated!
+                        // ...
+                    }).catch((error) => {
+                        console.log(error);
+                        // An error occurred
+                        // ...
+                    });
+
+                navigate('/')
+
+
             })
             .catch(error => {
                 console.log(error);
@@ -63,7 +83,6 @@ const Rejister = () => {
                             <div className="form-control">
                                 <label className="label relative">
                                     <span className="label-text">Password</span>
-                                    <button onClick={() => setShow(!show)} className="absolute left-[81%] top-[50px] right-4 text-2xl"> {show ? <FaEye /> : <FaEyeSlash />} </button>
 
                                 </label>
                                 <input name="password" type={show ? "text" : "password"} placeholder="password" className="input input-bordered" required />
@@ -75,6 +94,8 @@ const Rejister = () => {
                                 <button className="btn btn-primary">Rejister</button>
                             </div>
                         </form>
+                        <button onClick={() => setShow(!show)} className="absolute left-[78%] top-[52%] right-4 text-2xl"> {show ? <FaEye /> : <FaEyeSlash />} </button>
+
                         <p className='text-center m-5'>Already Rejister <Link to="/login" className='font-bold text-blue-600'>Go to Login</Link></p>
 
                     </div>
