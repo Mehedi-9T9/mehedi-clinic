@@ -5,24 +5,25 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { getAuth, updateProfile } from "firebase/auth";
-import app from "../../../firebase/firebase.config";
 
 const Rejister = () => {
-    const auth = getAuth(app)
+
     const navigate = useNavigate()
-    const { rejisterUser } = useContext(AuthContext)
+    const { rejisterUser, updateUser } = useContext(AuthContext)
+
+
     const submitHandler = (e) => {
         e.preventDefault()
 
         const form = new FormData(e.currentTarget)
         const name = form.get('name')
         const email = form.get('email')
+        const photo = form.get('photo')
         const password = form.get('password')
 
         const pattan = /^(?=.*[A-Z])(?=.*[a-z]).{6,}$/
         const chek = pattan.test(password);
-        console.log(chek);
+
         const notify = () => toast("Please Type Strong Password!");
         if (!chek) {
             notify()
@@ -33,25 +34,17 @@ const Rejister = () => {
 
         // user Create
         rejisterUser(email, password)
-            .then((resut) => {
+            .then(resut => {
                 const user = resut.user;
-
-
                 e.target.reset();
-                updateProfile(resut.user, {
-                    displayName: name, photoURL: "https://i.ibb.co/RNN1kt7/slider3-image.png"
-                })
-                    .then(() => {
-                        alert('update successfull');
-                        // Profile updated!
-                        // ...
-                    }).catch((error) => {
+                updateUser(user, name, photo)
+                    .then(result => {
+                        console.log(result.user);
+                    })
+                    .catch(error => {
                         console.log(error);
-                        // An error occurred
-                        // ...
-                    });
-
-                navigate('/')
+                    })
+                navigate('/login')
 
 
             })
@@ -76,6 +69,12 @@ const Rejister = () => {
                             </div>
                             <div className="form-control">
                                 <label className="label">
+                                    <span className="label-text">PhotoURL</span>
+                                </label>
+                                <input name="photo" type="url" placeholder="Img URL" className="input input-bordered" required />
+                            </div>
+                            <div className="form-control">
+                                <label className="label">
                                     <span className="label-text">Email</span>
                                 </label>
                                 <input name="email" type="email" placeholder="email" className="input input-bordered" required />
@@ -94,15 +93,14 @@ const Rejister = () => {
                                 <button className="btn btn-primary">Rejister</button>
                             </div>
                         </form>
-                        <button onClick={() => setShow(!show)} className="absolute left-[78%] top-[52%] right-4 text-2xl"> {show ? <FaEye /> : <FaEyeSlash />} </button>
+                        <button onClick={() => setShow(!show)} className="absolute left-[78%] top-[60%] right-4 text-2xl"> {show ? <FaEye /> : <FaEyeSlash />} </button>
 
-                        <p className='text-center m-5'>Already Rejister <Link to="/login" className='font-bold text-blue-600'>Go to Login</Link></p>
+                        <p className='text-center m-5 font-poppins'>Already Rejister <Link to="/login" className='font-bold text-blue-600'>Go to Login</Link></p>
 
                     </div>
                 </div>
             </div>
             <ToastContainer />
-
         </div>
     );
 };

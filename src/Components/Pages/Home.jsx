@@ -15,7 +15,6 @@ const Home = () => {
     const { doctors } = useContext(AuthContext)
     const sliceDoctors = doctors.slice(0, 3)
     const services = useLoaderData()
-    console.log(services);
 
     useEffect(() => {
         Aos.init({ delay: 1000 })

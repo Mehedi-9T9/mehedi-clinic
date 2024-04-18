@@ -3,12 +3,12 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../authProvider/AuthProvider';
 import { FcGoogle } from "react-icons/fc";
 import { Helmet } from 'react-helmet-async';
-import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { FaEye, FaEyeSlash, FaGithub } from "react-icons/fa";
 
 
 const Login = () => {
     const navigate = useNavigate()
-    const { loginUser, googleLogin } = useContext(AuthContext)
+    const { loginUser, googleLogin, githubLogin } = useContext(AuthContext)
     const location = useLocation()
 
     const submitHandler = (e) => {
@@ -41,6 +41,15 @@ const Login = () => {
                 console.log(error.message);
             })
     }
+    const githubHandler = () => {
+        githubLogin()
+            .then(result => {
+                console.log(result.user);
+            })
+            .catch(error => {
+                console.log(error);
+            })
+    }
     const [show, setShow] = useState(false)
 
 
@@ -64,7 +73,6 @@ const Login = () => {
                             <div className="form-control">
                                 <label className="label relative">
                                     <span className="label-text">Password</span>
-                                    <button onClick={() => setShow(!show)} className="absolute left-[81%] top-[50px] right-4 text-2xl"> {show ? <FaEye /> : <FaEyeSlash />} </button>
 
                                 </label>
                                 <input name='password' type={show ? "text" : "password"} placeholder="password" className="input input-bordered" required />
@@ -78,8 +86,16 @@ const Login = () => {
                             </div>
 
                         </form>
+                        <button onClick={() => setShow(!show)} className="absolute left-[78%] top-[36%] right-4 text-2xl"> {show ? <FaEye /> : <FaEyeSlash />} </button>
+
                         <div className="divider -mt-5">OR</div>
-                        <button onClick={googleHandler} className="btn bg-slate-300 text-lg font-poppins w-[80%] mx-auto"><FcGoogle /> Google</button>
+                        <div className='flex'>
+                            <button onClick={googleHandler} className="btn bg-slate-300 text-lg font-poppins w-[40%] mx-auto"><FcGoogle /></button>
+                            <button onClick={githubHandler} className="btn bg-slate-300 text-lg font-poppins w-[40%] mx-auto"><FaGithub /></button>
+
+
+
+                        </div>
                         <p className='text-center m-5'>New user for <Link to="/rejister" className='font-bold text-blue-600'>Go to Rejister</Link></p>
 
                     </div>

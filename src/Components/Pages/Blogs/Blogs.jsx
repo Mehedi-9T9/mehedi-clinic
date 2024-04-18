@@ -4,7 +4,6 @@ import BlogsDetails from "../BlogDetail/BlogsDetails";
 
 const Blogs = () => {
     const blogs = useLoaderData()
-    console.log(blogs);
 
     return (
         <div className="container mx-auto md:my-10 ">
